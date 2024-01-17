@@ -1,7 +1,7 @@
 import tkinter as tk
 
 WIDTH:int = 360
-HEIGHT:int = 120
+HEIGHT:int = 100
 
 TITLE = "Miles 2 Kilometers"
 
@@ -9,17 +9,17 @@ window = tk.Tk()
 
 window.title(TITLE)
 window.geometry(f"{WIDTH}x{HEIGHT}")
-window.resizable = False
 
 
 def convert():
     input_value = input_variable.get()
 
     try:
-        var = float(input_value)
+        var = float(input_value) * 1.609
         input_variable.set("")
-        converted_variable.set(var)
+        converted_variable.set(f"That's about {round(var,2)} kilometers")
     except:
+        input_variable.set("")
         pass
 
 
@@ -47,7 +47,7 @@ convert_button.pack(side='right')
 frame_convert.pack()
 
 converted_variable = tk.StringVar()
-convert_output = tk.Label(textvariable=converted_variable, font="bold 18")
+convert_output = tk.Label(textvariable=converted_variable, font="bold 16")
 convert_output.pack()
 
 window.mainloop()
