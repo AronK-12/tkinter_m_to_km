@@ -10,7 +10,6 @@ window = tk.Tk()
 window.title(TITLE)
 window.geometry(f"{WIDTH}x{HEIGHT}")
 
-
 def convert():
     input_value = input_variable.get()
 
@@ -21,7 +20,6 @@ def convert():
     except:
         input_variable.set("")
         pass
-
 
 label_title = tk.Label(text=TITLE, font="Bold 24")
 label_title.pack()
@@ -42,7 +40,6 @@ convert_button = tk.Button(
     command=convert
 )
 convert_button.pack(side='right')
-
 
 frame_convert.pack()
 
